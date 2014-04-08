@@ -1,1 +1,27 @@
 <h2>Tasks</h2>
+
+<p>
+  <a href="/" class="btn btn-info">
+    <span class="glyphicon glyphicon-home icon-white"></span> Home
+  </a>
+
+  <a href="/task/new" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus-sign icon-white"></span> New Task
+  </a>
+</p>
+
+<% unless @tasks.empty? %>
+<ul>
+  <% @tasks.each do |task| %>
+    <li <%= "class=\"completed\"" if task.completed %>>
+      <a href=<%= "/task/#{task.id}" %>><%= task.content %></a>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+<p>
+No Tasks
+</p>
+<% end %>
+
+
