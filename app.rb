@@ -17,15 +17,7 @@ end
 post '/signup/create' do
   user = User.new(username: params[:username], created_at: Time.now)
   database_save_check(user, '/signup/success', '/')
-=begin
-  if user.save
-    status 201
-    redirect '/signup/success'
-  else
-    status 412
-    redirect '/'
-  end
-=end
+
 end
 
 get '/signup/success' do
@@ -76,7 +68,7 @@ get '/logout' do
 end
 
 get '/tasks' do
-#  if User.authenticate(session["user"]) != nil
+
   if logged_in
     @tasks = session_user.tasks
     erb :'tasks.html', layout: :layout_tasks
@@ -86,7 +78,6 @@ get '/tasks' do
 end
 
 get '/task/new' do
-#  if User.authenticate(session["user"]) != nil
   if logged_in
     erb :'task_new.html'
   else
@@ -103,7 +94,6 @@ post '/task/create' do
 end
 
 get '/task/:id' do
-#  if User.authenticate(session["user"]) != nil
   if logged_in
     @task = User.first(username:session["user"]).tasks.get(params[:id])
 
@@ -114,7 +104,6 @@ get '/task/:id' do
 end
 
 get '/task/:id/edit' do
-#  if User.authenticate(session["user"]) != nil
   if logged_in
     @task = User.first(username:session["user"]).tasks.get(params[:id])
     erb :'task_edit.html'
@@ -124,7 +113,6 @@ get '/task/:id/edit' do
 end
 
 put '/task/:id' do
-#  if User.authenticate(session["user"]) != nil
   if logged_in
     @task = User.first(username:session["user"]).tasks.get(params[:id])
     @task.content = params[:content]
@@ -135,7 +123,6 @@ put '/task/:id' do
 end
 
 get '/task/:id/delete' do
-#  if User.authenticate(session["user"]) != nil
   if logged_in
     @task = User.first(username:session["user"]).tasks.get(params[:id])
     @task.destroy
@@ -146,7 +133,6 @@ get '/task/:id/delete' do
 end
 
 get '/task/:id/done' do
-#  if User.authenticate(session["user"]) != nil
   if logged_in
     @item = session_user.tasks.get(params[:id])
     completed = @item.completed
