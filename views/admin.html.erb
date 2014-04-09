@@ -1,0 +1,12 @@
+
+
+        <p>current session["user"] is:
+        <%= session["user"] != nil ? session["user"] : "nil"  %></p>
+
+        <p> All current entries in the User database:</p>
+
+        <% User.all.each do |entry| %>
+            <%= "<p>" + entry.username + "</p>" %>
+            <%= "<p>" + entry.created_at.to_s + "</p>" %>
+        <% end %>
+

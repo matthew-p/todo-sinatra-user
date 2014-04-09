@@ -1,0 +1,35 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+
+.todo-item {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.completed {
+  background-color: #dff0d8;
+}
+
+.v-center {
+  margin-top: 7%;
+}
+
+.max-widthed {
+  max-width: 500px;
+}
+
+.list-centered-style {
+  display: inline-block;
+  text-align: left;
+  word-break: break-all;
+
+  /* for webkit */
+  word-break: break-word;
+  -moz-word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+
+}

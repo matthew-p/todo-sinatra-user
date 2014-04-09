@@ -1,8 +1,11 @@
 <h2><%= "#{session['user']} successfully logged in!" %></h2>
 
 <p>
-  <a href='/' class="btn btn-primary">
-    <span class="glyphicon glyphicon-home icon-white"></span> Home
+  <a href='/tasks' class="btn btn-success">
+    <span class="glyphicon glyphicon-calendar icon-white"></span> Tasks
+  </a>
+  <a href="/task/new" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus icon-white"></span> New Task
   </a>
 </p>
 

@@ -20,6 +20,7 @@
     <![endif]-->
   </head>
   <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -41,7 +42,7 @@
 
             <% if session["user"] != nil %>
               <%= "<li><a href=\"/logout\">Log Out</a></li>" %>
-              <%= "<li><a href=\"/tasks\">Tasks</a></li>" %>
+              <%= "<li><a href=\"/task/new\">New Task</a></li>" %>
             <% else %>
               <%= "<li><a href=\"/login\">Log In</a></li>" %>
             <% end %>
@@ -54,12 +55,26 @@
       </div>
     </nav>
 
-
     <div class="container">
       <div class="row">
-        <div class="center-block v-center text-center max-widthed">
+        <div class="center-block">
 
             <%= yield %>
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom" >
+      <div class="container-fluid">
+        <ul class="nav nav-pills" style="margin:7px;">
+          <li class="center-block" style="float:none;max-width:400px;">
+            <a href="/task/new" class="btn btn-primary" >
+            <span class="glyphicon glyphicon-plus icon-white"></span> New Task
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

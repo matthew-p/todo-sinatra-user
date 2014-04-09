@@ -1,12 +1,8 @@
-<!--
-@task = Task.get(params[:id])
--->
-
 <h2><%= @task.content %></h2>
 
 
 
-<p> this task belongs to: <%= @task.user.username %> | user</p>
+<p> This task belongs to: <%= @task.user.username %></p>
 
 <p>
   <a href="/" class="btn btn-info">
