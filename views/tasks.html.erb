@@ -8,7 +8,7 @@
         <a href=<%= "/task/#{task.id}" %>><%= task.content %></a>
       </div>
       <div class="pull-right">
-        <a href=<%= "/task/#{task.id}/edit" %> class="btn btn-default btn-sm" style="display:inline;">
+        <a id="edit" href=<%= "/task/#{task.id}/edit" %> class="btn btn-default btn-sm" style="display:inline;">
           <span class="glyphicon glyphicon-wrench"></span> Edit
         </a>
         <a href=<%= "/task/#{task.id}/done" %>
@@ -27,7 +27,7 @@
 No Tasks
 </h3>
 <p>
-  <a href="/task/new" class="btn btn-primary">
+  <a href="/task/new" id="new" class="btn btn-primary">
     <span class="glyphicon glyphicon-plus icon-white"></span> New Task
   </a>
 </p>

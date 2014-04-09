@@ -3,9 +3,17 @@
 
 
 <p> This task belongs to: <%= @task.user.username %></p>
+<p> It was created at: <%= @task.created_at.strftime("%m/%d/%Y, %I:%M %P") %></p>
+<%= @task.completed_at ? "<p>It was completed at: " + @task.completed_at.strftime("%m/%d/%Y, %I:%M %P") + "</p>" : "" %>
 
 <p>
   <a href="/" class="btn btn-info">
     <span class="glyphicon glyphicon-home icon-white"></span> Home
+  </a>
+  <a href="/tasks" class="btn btn-success">
+    <span class="glyphicon glyphicon-calendar icon-white"></span> Tasks
+  </a>
+  <a href=<%= "\"/task/" + params[:id] + "/edit\"" %> class="btn btn-primary">
+    <span class="glyphicon glyphicon-wrench icon-white"></span> Edit
   </a>
 </p>

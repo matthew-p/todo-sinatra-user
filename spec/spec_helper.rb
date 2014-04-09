@@ -17,4 +17,8 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/test.db")
+  DataMapper.finalize
+  User.auto_migrate!
+  Task.auto_migrate!
 end

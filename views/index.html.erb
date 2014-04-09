@@ -15,8 +15,8 @@
       <span class="glyphicon glyphicon-plus-sign icon-white"></span> Sign Up
     </a>
 
-    <a href="/tasks" class="btn btn-success" <%= "style=\"display:none;\"" if @user == nil %>>
-      <span class="glyphicon glyphicon-calendar icon-white"></span> User Tasks
+    <a id="tasks" href="/tasks" class="btn btn-success" <%= "style=\"display:none;\"" if @user == nil %>>
+      <span class="glyphicon glyphicon-calendar icon-white"></span> Tasks
     </a>
 
     <a href="/task/new" class="btn btn-primary" <%= "style=\"display:none;\"" if @user == nil %>>
