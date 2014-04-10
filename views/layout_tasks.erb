@@ -32,7 +32,7 @@
           </button>
           <a class="navbar-brand" href="/">ToDo App</a>
           <p class="navbar-text">
-            <%= "Signed in as: " + session["user"] unless session["user"] == nil  %>
+            <%= "Signed in as: " + escape_html(session["user"]) unless session["user"] == nil  %>
           </p>
 
         </div>

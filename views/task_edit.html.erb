@@ -4,7 +4,7 @@
 
   <div class="input-group centered-block" style="display:block">
     <input name="_method" type="hidden" value="put">
-    <textarea rows="2" class="form-control" id="content" maxlength="64" name="content"><%= @task.content %></textarea>
+    <textarea rows="2" class="form-control" id="content" maxlength="64" name="content"><%= escape_html(@task.content) %></textarea>
 
       <button class="btn btn-primary" id="task_submit" name="commit" type="submit"><span class="glyphicon glyphicon-plus-sign icon-white"></span> Submit</button>
 

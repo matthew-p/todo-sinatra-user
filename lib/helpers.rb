@@ -1,4 +1,8 @@
 helpers do
+  include Rack::Utils
+
+
+
   def database_save_check(item, success_route, fail_route)
     if item.save
       status 201

@@ -1,8 +1,8 @@
-<h2><%= @task.content %></h2>
+<h2><%= escape_html(@task.content) %></h2>
 
 
 
-<p> This task belongs to: <%= @task.user.username %></p>
+<p> This task belongs to: <%= escape_html(@task.user.username) %></p>
 <p> It was created at: <%= @task.created_at.strftime("%m/%d/%Y, %I:%M %P") %></p>
 <%= @task.completed_at ? "<p>It was completed at: " + @task.completed_at.strftime("%m/%d/%Y, %I:%M %P") + "</p>" : "" %>
 

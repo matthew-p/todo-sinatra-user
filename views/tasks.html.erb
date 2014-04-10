@@ -5,7 +5,7 @@
   <% @tasks.each do |task| %>
     <li class=<%= task.completed ? "\"list-group-item completed\"" : "\"list-group-item\"" %>>
       <div class="list-centered-style">
-        <a href=<%= "/task/#{task.id}" %>><%= task.content %></a>
+        <a href=<%= "/task/#{task.id}" %>><%= escape_html(task.content) %></a>
       </div>
       <div class="pull-right">
         <a id="edit" href=<%= "/task/#{task.id}/edit" %> class="btn btn-default btn-sm" style="display:inline;">
